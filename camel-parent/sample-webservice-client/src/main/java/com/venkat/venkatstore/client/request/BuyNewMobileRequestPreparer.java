@@ -7,6 +7,11 @@ import com.venkat.venkatstore.types.mobilestore.Address;
 import com.venkat.venkatstore.types.mobilestore.BuyNewMobielRequest;
 import com.venkat.venkatstore.types.mobilestore.ObjectFactory;
 
+/**
+ * 
+ * @author VenkaT
+ *
+ */
 public class BuyNewMobileRequestPreparer {
 	
 	

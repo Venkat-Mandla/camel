@@ -19,7 +19,7 @@ import org.slf4j.LoggerFactory;
  */
 public class PollerEnrichTest extends CamelTestSupport{
 
-	private static final Logger LOG=LoggerFactory.getLogger(PollerEnrichTest.class);
+	private static final Logger LOGGER=LoggerFactory.getLogger(PollerEnrichTest.class);
 	
 	
 	@Override
@@ -46,7 +46,7 @@ public class PollerEnrichTest extends CamelTestSupport{
 		
 		do{
 			exchange=pollingConsumer.receive();
-			LOG.info("File poll: 1+"+exchange.getProperty("CamelBatchIndex"));
+			LOGGER.info("File poll: 1+"+exchange.getProperty("CamelBatchIndex"));
 			template.sendBodyAndHeaders("direct:start",exchange,exchange.getIn().getHeaders());
 		}while( null != exchange && !exchange.getProperty("CamelBatchComplete", Boolean.class));
 	}
