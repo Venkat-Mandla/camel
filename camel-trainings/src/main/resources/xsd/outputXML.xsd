@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:xt="http://domain.data.learnings.camel.com/"
+	targetNamespace="http://domain.data.learnings.camel.com/"
+	elementFormDefault="qualified">
+
+	<xs:element name="Customers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="customer" type="xt:CustomerType" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Customer">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="customer" type="xt:CustomerType" minOccurs="1" maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:complexType name="CustomerType">
+			<xs:sequence>
+				<xs:element name="custId" type="xs:string" minOccurs="0" maxOccurs="1" />
+				<xs:element name="custName" type="xs:string" minOccurs="0" maxOccurs="1" />
+				<xs:element name="address" type="xt:Address" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	
+	<xs:complexType name="Address">
+		<xs:sequence>
+			<xs:element name="line1" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="city" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="state" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="zipCode" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
